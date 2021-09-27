@@ -9,7 +9,7 @@ import api from "./apis";
 function App() {
   const [images, setImages] = useState([]);
   const [selectedImage, setSelectedImage] = useState({});
-  const [inputText, setInputText] = useState([{ text: "" }]);
+  const [inputText, setInputText] = useState([]);
 
   useEffect(() => {
     (async () => {

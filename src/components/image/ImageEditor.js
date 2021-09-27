@@ -1,13 +1,34 @@
 import React from "react";
 import { Box, Image } from "@chakra-ui/react";
+import { Resizable } from "re-resizable";
 
 const ImageEditor = ({ selectedImage, inputText }) => {
-  console.log("inputText", inputText);
+  console.log("inputText", inputText[0]);
   return (
     <Box>
-      <h1>{inputText[0]}</h1>
+      <Resizable
+        style={{
+          border: "1px solid #f00",
+        }}
+        defaultSize={{
+          width: 100,
+          height: 60,
+        }}
+      >
+        {inputText[0]}
+      </Resizable>
       <Image boxSize="full" src={selectedImage.url} alt={selectedImage.name} />
-      <h1>{inputText[1]}</h1>
+      <Resizable
+        style={{
+          border: "1px solid #f00",
+        }}
+        defaultSize={{
+          width: 100,
+          height: 60,
+        }}
+      >
+        {inputText[1]}
+      </Resizable>
     </Box>
   );
 };
