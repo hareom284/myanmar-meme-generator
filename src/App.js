@@ -3,7 +3,7 @@ import Header from "./components/header/Header";
 import HorizontalImageList from "./components/image/HorizonalImageList";
 import ImageEditor from "./components/image/ImageEditor";
 import TextInputBox from "./components/TextInputBox";
-import { Container, SimpleGrid, Box } from "@chakra-ui/react";
+import { Container, SimpleGrid, Box, Text } from "@chakra-ui/react";
 import api from "./apis";
 
 function App() {
@@ -32,6 +32,7 @@ function App() {
     setInputText(input);
   };
 
+  console.log(selectedImage.name);
   return (
     <>
       <Header />
@@ -45,6 +46,8 @@ function App() {
               />
             </Box>
             <Box>
+              <Text fontSize="xl">{selectedImage.name}</Text>
+
               <HorizontalImageList
                 images={images}
                 setSelectedImage={setSelectedImage}

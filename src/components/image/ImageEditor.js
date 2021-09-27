@@ -3,7 +3,6 @@ import { Box, Image } from "@chakra-ui/react";
 import { Resizable } from "re-resizable";
 
 const ImageEditor = ({ selectedImage, inputText }) => {
-  console.log("inputText", inputText[0]);
   return (
     <Box>
       <Resizable

@@ -3,7 +3,7 @@ import { HStack, Image } from "@chakra-ui/react";
 
 const HorizontalImageList = ({ images, setSelectedImage }) => {
   return (
-    <HStack overflow="scroll" pb={4}>
+    <HStack overflow="scroll" py={4}>
       {images &&
         images.map((img, i) => (
           <Image

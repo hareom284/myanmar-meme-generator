@@ -10,7 +10,6 @@ const TextInputBox = ({ selectedImage, handleText, inputText }) => {
 
   return (
     <Box>
-      {boxCount}
       {[...Array(boxCount)].map((x, i) => (
         <Input
           placeholder={`Text Input #${i}`}
