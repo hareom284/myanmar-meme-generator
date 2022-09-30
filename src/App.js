@@ -3,9 +3,9 @@ import Header from "./components/header/Header";
 import HorizontalImageList from "./components/image/HorizonalImageList";
 import ImageEditor from "./components/image/ImageEditor";
 import TextInputBox from "./components/TextInputBox";
-import { Container, SimpleGrid, Box, Text } from "@chakra-ui/react";
+import {  Text } from "@chakra-ui/react";
 import api from "./apis";
-
+import './custom.css'
 function App() {
   const [images, setImages] = useState([]);
   const [selectedImage, setSelectedImage] = useState({});
@@ -31,38 +31,36 @@ function App() {
     input[key] = text;
     setInputText(input);
   };
-
-  console.log(selectedImage.name);
   return (
     <>
       <Header />
-      <Container maxW="container.lg">
-        <Box py={12}>
-          <SimpleGrid columns={[1, null, 2]} spacing="10px">
-            <Box>
-              <ImageEditor
-                selectedImage={selectedImage}
-                inputText={inputText}
-              />
-            </Box>
-            <Box>
-              <Text fontSize="xl">{selectedImage.name}</Text>
+      <div className="container-grid">
+        <div className="grid-item-1">
 
-              <HorizontalImageList
-                images={images}
-                setSelectedImage={setSelectedImage}
-              />
-              <TextInputBox
-                selectedImage={selectedImage}
-                handleText={handleText}
-                inputText={inputText}
-              />
-            </Box>
-          </SimpleGrid>
-        </Box>
-      </Container>
-    </>
-  );
+          <ImageEditor
+            selectedImage={selectedImage}
+            inputText={inputText}
+          />
+        </div>
+        <div className="grid-item-2" >
+          <Text fontSize="xl">{selectedImage.name}</Text>
+
+          <HorizontalImageList
+            images={images}
+            setSelectedImage={setSelectedImage}
+            className="resize-1"
+          />
+          <TextInputBox
+            selectedImage={selectedImage}
+            handleText={handleText}
+            inputText={inputText}
+            className="resize-2"
+          />
+
+        </div>
+      </div>
+      </>
+        );
 }
 
-export default App;
+        export default App;
